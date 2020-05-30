@@ -15,7 +15,7 @@ public:
 	void playerAsk();
 	void landlordAsk();
 	void newGame();
-
+	void landlordProcess();
 
 private:
 	int poker[53], pValue[53];
