@@ -110,7 +110,7 @@ void Poker::playerAsk()
 {
 	if (playerN >= 5)
 	{
-		cout << "你的牌數已夠5張，不能再要牌了" << endl;
+		cout << "你的牌數已經5張，不能再要牌了" << endl;
 		landlordProcess();
 	}
 	else
@@ -119,10 +119,19 @@ void Poker::playerAsk()
 		cout << "你的牌為:" << getPlayer() << endl;
 		if (getSumP() > 21)
 		{
-			cout << "你撐死了,你輸了" <<  endl;
-			
-			
-			shuffle();
+			cout << "你爆牌了,你輸了!!!!" <<  endl;
+			cout << "是否開始新的一局(y/n):";
+			string a;
+			cin >> a;
+			if (a == "y")
+			{
+				newGame();
+			}
+			else if (a == "n")
+				exit(0);
+			else
+				cout << "輸入錯誤,請輸入y或n:";
+			cin >> a;
 		}
 		else if (getSumP() == 21)
 		{
@@ -137,21 +146,53 @@ void Poker::landlordAsk()
 		if (getSumP() > getSumL())
 		{
 			cout << "莊家的牌為" << getPlayer() << endl;
-			cout << "你贏了,你贏了"  << endl;
-			shuffle();
+			cout << "你贏了!!!!"  << endl;
+			cout << "是否開始新的一局(y/n):";
+			string a;
+			cin >> a;
+			if (a == "y")
+			{
+				newGame();
+			}
+			else if (a == "n")
+				exit(0);
+			else
+				cout << "輸入錯誤,請輸入y或n:";
+			cin >> a;
 		}
 		else if (getSumP() == getSumL())
 		{
 			cout << "莊家的牌為" << getLandlord() << endl;
-			cout << "平手" << endl;
-			shuffle();
+			cout << "雙方平手" << endl;
+			cout << "是否開始新的一局(y/n):";
+			string a;
+			cin >> a;
+			if (a == "y")
+			{
+				newGame();
+			}
+			else if (a == "n")
+				exit(0);
+			else
+				cout << "輸入錯誤,請輸入y或n:";
+			cin >> a;
 		}
 		else if (getSumP() < getSumL())
 		{
 			cout << "莊家的牌為" << getLandlord() << endl;
-			cout << "你輸了,你輸了" << endl;
-			
-			shuffle();
+			cout << "你輸了!!!!" << endl;
+			cout << "是否開始新的一局(y/n):";
+			string a;
+			cin >> a;
+			if (a == "y")
+			{
+				newGame();
+			}
+			else if (a == "n")
+				exit(0);
+			else
+				cout << "輸入錯誤,請輸入y或n:";
+			cin >> a;
 		}
 	}
 	else
@@ -160,9 +201,19 @@ void Poker::landlordAsk()
 		if (getSumL() > 21)
 		{
 			cout << "莊家的牌為" << getLandlord() << endl;
-			cout << "莊家撐死了,你贏了" << endl;
-			
-			shuffle();
+			cout << "莊家爆牌,你贏了" << endl;
+			cout << "是否開始新的一局(y/n):";
+			string a;
+			cin >> a;
+			if (a == "y")
+			{
+				newGame();
+			}
+			else if (a == "n")
+				exit(0);
+			else
+				cout << "輸入錯誤,請輸入y或n:";
+			cin >> a;
 		}
 		else    landlordProcess();
 	}
@@ -170,7 +221,12 @@ void Poker::landlordAsk()
 
 void Poker::newGame()
 {
-
+	system("CLS");
+	cout << ">>>>>>>>>>>>>>>> Welcome To Play Black Jack <<<<<<<<<<<<<<<<" << endl << endl;
+	shuffle();
+	
+	
+	
 }
 void Poker::landlordProcess()
 {
@@ -180,25 +236,52 @@ void Poker::landlordProcess()
 		{
 			cout << "莊家的牌為" << getLandlord() << endl;
 			cout << "莊家獲勝，你輸了" << endl;
-			
-				
-			
-			
-				shuffle();
+			cout << "是否開始新的一局(y/n):";
+			string a;
+			cin >> a;
+			if (a == "y")
+			{
+				newGame();
+			}
+			else if (a == "n")
+				exit(0);
+			else
+				cout << "輸入錯誤,請輸入y或n:";
+			cin >> a;
 		}
 		else if (getSumP() == getSumL())
 		{
 			cout << "莊家的牌為" << getPlayer() << endl;
-			cout << "本次遊戲平手" << endl;
-			
-			shuffle();
+			cout << "雙方平手" << endl;
+			cout << "是否開始新的一局(y/n):";
+			string a;
+			cin >> a;
+			if (a == "y")
+			{
+				newGame();
+			}
+			else if (a == "n")
+				exit(0);
+			else
+				cout << "輸入錯誤,請輸入y或n:";
+			    cin >> a;
 		}
 		else
 		{
 			cout << "莊家的牌為" << getPlayer() << endl;
-			cout << "你贏了,你贏了"  << endl;
-			
-			shuffle();
+			cout << "你贏了!!!!"  << endl;
+			cout << "是否開始新的一局(y/n):";
+			string a;
+			cin >> a;
+			if (a == "y")
+			{
+				newGame();
+			}
+			else if (a == "n")
+				exit(0);
+			else
+				cout << "輸入錯誤,請輸入y或n:";
+			cin >> a;
 		}
 	}
 	else
