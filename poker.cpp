@@ -52,7 +52,7 @@ Poker::Poker()
 }
 void Poker::shuffle()
 {
-	cout << "éŠæˆ²é–‹å§‹ï¼Œé–‹å§‹æ´—ç‰Œ>>>>>" << endl;
+	cout << "¹CÀ¸¶}©l¡A¶}©l¬~µP>>>>>" << endl;
 	srand((int)time(0));
 	for (int i = 0; i < NUM; i++)
 	{
@@ -66,7 +66,7 @@ void Poker::shuffle()
 	playerN = 2;
 	landlordN = 2;
 
-	cout << "æ´—ç‰ŒçµæŸ,ä½ çš„ç‰Œç‚º:" << getPlayer() << "  é»žæ•¸:" << getSumP() << endl;
+	cout << "¬~µPµ²§ô,§AªºµP¬°:" << getPlayer() << "  ÂI¼Æ:" << getSumP() << endl;
 }
 string Poker::getPlayer()const
 {
@@ -110,16 +110,16 @@ void Poker::playerAsk()
 {
 	if (playerN >= 5)
 	{
-		cout << "ä½ çš„ç‰Œæ•¸å·²ç¶“5å¼µï¼Œä¸èƒ½å†è¦ç‰Œäº†" << endl;
+		cout << "§AªºµP¼Æ¤w¸g5±i¡A¤£¯à¦A­nµP¤F" << endl;
 		landlordProcess();
 	}
 	else
 	{
 		player[playerN++] = randNum[j++];
-		cout << "ä½ çš„ç‰Œç‚º:" << getPlayer() << "  é»žæ•¸:" << getSumP() << endl;
+		cout << "§AªºµP¬°:" << getPlayer() << "  ÂI¼Æ:" << getSumP() << endl;
 		if (getSumP() > 21)
 		{
-			cout << "ä½ çˆ†ç‰Œäº†,ä½ è¼¸äº†!!!!" << endl;
+			cout << "§AÃzµP¤F,§A¿é¤F!!!!" << endl;
 			shuffle();
 		}
 		else if (getSumP() == 21)
@@ -134,22 +134,22 @@ void Poker::landlordAsk()
 	{
 		if (getSumP() > getSumL())
 		{
-			cout << "èŽŠå®¶çš„ç‰Œç‚º" << getPlayer() << "  é»žæ•¸:" << getSumL() << endl;
-			cout << "ä½ è´äº†!!!!" << endl;
+			cout << "²ø®aªºµP¬°" << getLandlord() << "  ÂI¼Æ:" << getSumL() << endl;
+			cout << "§AÄ¹¤F!!!!" << endl;
 			shuffle();
 
 
 		}
 		else if (getSumP() == getSumL())
 		{
-			cout << "èŽŠå®¶çš„ç‰Œç‚º" << getLandlord() << "  é»žæ•¸:" << getSumL() << endl;
-			cout << "é›™æ–¹å¹³æ‰‹" << endl;
+			cout << "²ø®aªºµP¬°" << getLandlord() << "  ÂI¼Æ:" << getSumL() << endl;
+			cout << "Âù¤è¥­¤â" << endl;
 			shuffle();
 		}
 		else if (getSumP() < getSumL())
 		{
-			cout << "èŽŠå®¶çš„ç‰Œç‚º" << getLandlord() << "  é»žæ•¸:" << getSumL() << endl;
-			cout << "ä½ è¼¸äº†!!!!" << endl;
+			cout << "²ø®aªºµP¬°" << getLandlord() << "  ÂI¼Æ:" << getSumL() << endl;
+			cout << "§A¿é¤F!!!!" << endl;
 			shuffle();
 		}
 	}
@@ -158,8 +158,8 @@ void Poker::landlordAsk()
 		landlord[landlordN++] = randNum[j++];
 		if (getSumL() > 21)
 		{
-			cout << "èŽŠå®¶çš„ç‰Œç‚º" << getLandlord() << "  é»žæ•¸:" << getSumL() << endl;
-			cout << "èŽŠå®¶çˆ†ç‰Œ,ä½ è´äº†" << endl;
+			cout << "²ø®aªºµP¬°" << getLandlord() << "  ÂI¼Æ:" << getSumL() << endl;
+			cout << "²ø®aÃzµP,§AÄ¹¤F" << endl;
 			shuffle();
 		}
 		else    landlordProcess();
@@ -181,20 +181,20 @@ void Poker::landlordProcess()
 	{
 		if (getSumL() > getSumP())
 		{
-			cout << "èŽŠå®¶çš„ç‰Œç‚º" << getLandlord() << "  é»žæ•¸:" << getSumL() << endl;
-			cout << "èŽŠå®¶ç²å‹ï¼Œä½ è¼¸äº†" << endl;
+			cout << "²ø®aªºµP¬°" << getLandlord() << "  ÂI¼Æ:" << getSumL() << endl;
+			cout << "²ø®aÀò³Ó¡A§A¿é¤F" << endl;
 			shuffle();
 		}
 		else if (getSumP() == getSumL())
 		{
-			cout << "èŽŠå®¶çš„ç‰Œç‚º" << getPlayer() << "  é»žæ•¸:" << getSumL() << endl;
-			cout << "é›™æ–¹å¹³æ‰‹" << endl;
+			cout << "²ø®aªºµP¬°" << getLandlord() << "  ÂI¼Æ:" << getSumL() << endl;
+			cout << "Âù¤è¥­¤â" << endl;
 			shuffle();
 		}
 		else
 		{
-			cout << "èŽŠå®¶çš„ç‰Œç‚º" << getPlayer() << "  é»žæ•¸:" << getSumL() << endl;
-			cout << "ä½ è´äº†!!!!" << endl;
+			cout << "²ø®aªºµP¬°" << getLandlord() << "  ÂI¼Æ:" << getSumL() << endl;
+			cout << "§AÄ¹¤F!!!!" << endl;
 			shuffle();
 		}
 	}
