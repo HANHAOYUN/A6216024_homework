@@ -9,12 +9,12 @@ int randNum[NUM];
 Poker::Poker()
 {
 	poker[0] = 0;
-	for (int i = 0;i <= 13; i++)
+	for (int i = 0; i <= 13; i++)
 	{
 		poker[i] = i;
-		poker[i+13] = i;
-		poker[i+26] = i;
-		poker[i+39] = i;
+		poker[i + 13] = i;
+		poker[i + 26] = i;
+		poker[i + 39] = i;
 	}
 	pValue[0] = 0;
 	for (int i = 0; i <= 52; i++)
@@ -41,14 +41,14 @@ Poker::Poker()
 		pName[12 + 13 * i] = "Q";
 		pName[13 + 13 * i] = "K";
 	}
-	
-	
+
+
 	for (int i = 0; i < 5; i++)
 	{
-		player[i] = 0;    
-		landlord[i] = 0;    
+		player[i] = 0;
+		landlord[i] = 0;
 	}
-	
+
 }
 void Poker::shuffle()
 {
@@ -66,9 +66,9 @@ void Poker::shuffle()
 	playerN = 2;
 	landlordN = 2;
 
-	cout << "洗牌結束,你的牌為:" << getPlayer() <<"  點數:"<<getSumP()<< endl;
+	cout << "洗牌結束,你的牌為:" << getPlayer() << "  點數:" << getSumP() << endl;
 }
-string Poker::getPlayer()
+string Poker::getPlayer()const
 {
 	int i;
 	string pp = "";
@@ -78,17 +78,17 @@ string Poker::getPlayer()
 
 	return pp;
 }
-string Poker::getLandlord()
+string Poker::getLandlord()const
 {
 	int i;
 	string lp = "";
 
 	for (i = 0; i < landlordN; i++)
-		lp = lp  + pName[landlord[i]] + " ";
+		lp = lp + pName[landlord[i]] + " ";
 
 	return lp;
 }
-int Poker::getSumP()
+int Poker::getSumP()const
 {
 	int sp = 0;
 
@@ -97,7 +97,7 @@ int Poker::getSumP()
 
 	return sp;
 }
-int Poker::getSumL()
+int Poker::getSumL()const
 {
 	int sl = 0;
 
@@ -115,11 +115,11 @@ void Poker::playerAsk()
 	}
 	else
 	{
-		player[playerN++] = randNum[j++];  
+		player[playerN++] = randNum[j++];
 		cout << "你的牌為:" << getPlayer() << "  點數:" << getSumP() << endl;
 		if (getSumP() > 21)
 		{
-			cout << "你爆牌了,你輸了!!!!" <<  endl;
+			cout << "你爆牌了,你輸了!!!!" << endl;
 			shuffle();
 		}
 		else if (getSumP() == 21)
@@ -135,10 +135,10 @@ void Poker::landlordAsk()
 		if (getSumP() > getSumL())
 		{
 			cout << "莊家的牌為" << getPlayer() << "  點數:" << getSumL() << endl;
-			cout << "你贏了!!!!"  << endl;
+			cout << "你贏了!!!!" << endl;
 			shuffle();
-		 
-			
+
+
 		}
 		else if (getSumP() == getSumL())
 		{
@@ -155,7 +155,7 @@ void Poker::landlordAsk()
 	}
 	else
 	{
-		landlord[landlordN++] = randNum[j++];  
+		landlord[landlordN++] = randNum[j++];
 		if (getSumL() > 21)
 		{
 			cout << "莊家的牌為" << getLandlord() << "  點數:" << getSumL() << endl;
@@ -171,9 +171,9 @@ void Poker::newGame()
 	system("CLS");
 	cout << ">>>>>>>>>>>>>>>> Welcome To Play Black Jack <<<<<<<<<<<<<<<<" << endl << endl;
 	shuffle();
-	
-	
-	
+
+
+
 }
 void Poker::landlordProcess()
 {
@@ -194,7 +194,7 @@ void Poker::landlordProcess()
 		else
 		{
 			cout << "莊家的牌為" << getPlayer() << "  點數:" << getSumL() << endl;
-			cout << "你贏了!!!!"  << endl;
+			cout << "你贏了!!!!" << endl;
 			shuffle();
 		}
 	}

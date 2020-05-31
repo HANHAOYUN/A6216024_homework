@@ -8,10 +8,10 @@ class Poker
 public:
 	Poker();
 	void shuffle();
-	string getPlayer();
-	string getLandlord();
-	int getSumP();
-	int getSumL();
+	string getPlayer()const;
+	string getLandlord()const;
+	int getSumP()const;
+	int getSumL()const;
 	void playerAsk();
 	void landlordAsk();
 	void newGame();
@@ -25,4 +25,3 @@ private:
 
 };
 #endif
-
