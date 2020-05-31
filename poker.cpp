@@ -1,4 +1,4 @@
-﻿#include "poker.h"
+#include "poker.h"
 #include<time.h>
 #include<iostream>
 #include<string>
