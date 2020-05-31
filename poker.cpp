@@ -66,7 +66,7 @@ void Poker::shuffle()
 	playerN = 2;
 	landlordN = 2;
 
-	cout << "洗牌結束,你的牌為:" << getPlayer() << endl;
+	cout << "洗牌結束,你的牌為:" << getPlayer() <<"  點數:"<<getSumP()<< endl;
 }
 string Poker::getPlayer()
 {
@@ -116,7 +116,7 @@ void Poker::playerAsk()
 	else
 	{
 		player[playerN++] = randNum[j++];  
-		cout << "你的牌為:" << getPlayer() << endl;
+		cout << "你的牌為:" << getPlayer() << "  點數:" << getSumP() << endl;
 		if (getSumP() > 21)
 		{
 			cout << "你爆牌了,你輸了!!!!" <<  endl;
@@ -134,7 +134,7 @@ void Poker::landlordAsk()
 	{
 		if (getSumP() > getSumL())
 		{
-			cout << "莊家的牌為" << getPlayer() << endl;
+			cout << "莊家的牌為" << getPlayer() << "  點數:" << getSumL() << endl;
 			cout << "你贏了!!!!"  << endl;
 			shuffle();
 		 
@@ -142,13 +142,13 @@ void Poker::landlordAsk()
 		}
 		else if (getSumP() == getSumL())
 		{
-			cout << "莊家的牌為" << getLandlord() << endl;
+			cout << "莊家的牌為" << getLandlord() << "  點數:" << getSumL() << endl;
 			cout << "雙方平手" << endl;
 			shuffle();
 		}
 		else if (getSumP() < getSumL())
 		{
-			cout << "莊家的牌為" << getLandlord() << endl;
+			cout << "莊家的牌為" << getLandlord() << "  點數:" << getSumL() << endl;
 			cout << "你輸了!!!!" << endl;
 			shuffle();
 		}
@@ -158,7 +158,7 @@ void Poker::landlordAsk()
 		landlord[landlordN++] = randNum[j++];  
 		if (getSumL() > 21)
 		{
-			cout << "莊家的牌為" << getLandlord() << endl;
+			cout << "莊家的牌為" << getLandlord() << "  點數:" << getSumL() << endl;
 			cout << "莊家爆牌,你贏了" << endl;
 			shuffle();
 		}
@@ -181,19 +181,19 @@ void Poker::landlordProcess()
 	{
 		if (getSumL() > getSumP())
 		{
-			cout << "莊家的牌為" << getLandlord() << endl;
+			cout << "莊家的牌為" << getLandlord() << "  點數:" << getSumL() << endl;
 			cout << "莊家獲勝，你輸了" << endl;
 			shuffle();
 		}
 		else if (getSumP() == getSumL())
 		{
-			cout << "莊家的牌為" << getPlayer() << endl;
+			cout << "莊家的牌為" << getPlayer() << "  點數:" << getSumL() << endl;
 			cout << "雙方平手" << endl;
 			shuffle();
 		}
 		else
 		{
-			cout << "莊家的牌為" << getPlayer() << endl;
+			cout << "莊家的牌為" << getPlayer() << "  點數:" << getSumL() << endl;
 			cout << "你贏了!!!!"  << endl;
 			shuffle();
 		}
