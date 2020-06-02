@@ -12,7 +12,7 @@ Poker::Poker()
 	poker[0] = 0;
 	for (int i = 0; i <= 13; i++)
 	{
-		poker[i] = i; //|用建構函式對牌初始化
+		poker[i] = i;          //|用建構函式對牌初始化
 		poker[i + 13] = i;
 		poker[i + 26] = i;
 		poker[i + 39] = i;
@@ -46,8 +46,8 @@ Poker::Poker()
 
 	for (int i = 0; i < 5; i++)
 	{
-		player[i] = 0;   //|對pokerOfFarmer初始化
-		landlord[i] = 0;   //|對pokerOfLandlord初始化
+		player[i] = 0;
+		landlord[i] = 0;
 	}
 
 }
@@ -59,10 +59,10 @@ void Poker::shuffle()
 	{
 		randNum[i] = rand() * 51 / 32767 + 1;
 	}
-	player[0] = randNum[j++];
-	player[1] = randNum[j++];
-	landlord[0] = randNum[j++];
-	landlord[1] = randNum[j++];
+	player[0] = randNum[j++];    //產生1-52的隨機數
+	player[1] = randNum[j++];    //產生1-52的隨機數
+	landlord[0] = randNum[j++];  //產生1-52的隨機數
+	landlord[1] = randNum[j++];  //產生1-52的隨機數
 
 	playerN = 2;
 	landlordN = 2;
@@ -89,7 +89,7 @@ string Poker::getLandlord()const
 
 	return lp;
 }
-int Poker::getSumP()const
+int Poker::getSumP()const  //返回玩家的總點數
 {
 	int sp = 0;
 
@@ -98,7 +98,7 @@ int Poker::getSumP()const
 
 	return sp;
 }
-int Poker::getSumL()const
+int Poker::getSumL()const  //返回莊家的總點數
 {
 	int sl = 0;
 
@@ -116,7 +116,7 @@ void Poker::playerAsk()
 	}
 	else
 	{
-		player[playerN++] = randNum[j++];
+		player[playerN++] = randNum[j++];   //產生1-52的隨機數
 		cout << "你的牌為:" << getPlayer() << "  點數:" << getSumP() << endl;
 		if (getSumP() > 21)
 		{
