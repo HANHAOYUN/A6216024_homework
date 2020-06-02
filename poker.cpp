@@ -12,7 +12,7 @@ Poker::Poker()
 	poker[0] = 0;
 	for (int i = 0; i <= 13; i++)
 	{
-		poker[i] = i;
+		poker[i] = i; //|用建構函式對牌初始化
 		poker[i + 13] = i;
 		poker[i + 26] = i;
 		poker[i + 39] = i;
@@ -46,8 +46,8 @@ Poker::Poker()
 
 	for (int i = 0; i < 5; i++)
 	{
-		player[i] = 0;
-		landlord[i] = 0;
+		player[i] = 0;   //|對pokerOfFarmer初始化
+		landlord[i] = 0;   //|對pokerOfLandlord初始化
 	}
 
 }
