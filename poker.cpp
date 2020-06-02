@@ -1,3 +1,4 @@
+
 #include "poker.h"
 #include<time.h>
 #include<iostream>
@@ -119,7 +120,7 @@ void Poker::playerAsk()
 		cout << "你的牌為:" << getPlayer() << "  點數:" << getSumP() << endl;
 		if (getSumP() > 21)
 		{
-			cout << "你爆牌了,你輸了!!!!" << endl;
+			cout << "你爆牌了,你輸了!!!!" << endl << "------------------------------------------------------------------------------------" << endl;
 			shuffle();
 		}
 		else if (getSumP() == 21)
@@ -135,7 +136,7 @@ void Poker::landlordAsk()
 		if (getSumP() > getSumL())
 		{
 			cout << "莊家的牌為" << getLandlord() << "  點數:" << getSumL() << endl;
-			cout << "你贏了!!!!" << endl;
+			cout << "你贏了!!!!" << endl  << "------------------------------------------------------------------------------------" << endl;
 			shuffle();
 
 
@@ -143,13 +144,13 @@ void Poker::landlordAsk()
 		else if (getSumP() == getSumL())
 		{
 			cout << "莊家的牌為" << getLandlord() << "  點數:" << getSumL() << endl;
-			cout << "雙方平手" << endl;
+			cout << "雙方平手" << endl  << "------------------------------------------------------------------------------------" << endl;
 			shuffle();
 		}
 		else if (getSumP() < getSumL())
 		{
 			cout << "莊家的牌為" << getLandlord() << "  點數:" << getSumL() << endl;
-			cout << "你輸了!!!!" << endl;
+			cout << "你輸了!!!!" << endl<<"------------------------------------------------------------------------------------"  << endl;
 			shuffle();
 		}
 	}
@@ -159,7 +160,7 @@ void Poker::landlordAsk()
 		if (getSumL() > 21)
 		{
 			cout << "莊家的牌為" << getLandlord() << "  點數:" << getSumL() << endl;
-			cout << "莊家爆牌,你贏了" << endl;
+			cout << "莊家爆牌,你贏了" << endl  << "------------------------------------------------------------------------------------" << endl;
 			shuffle();
 		}
 		else    landlordProcess();
@@ -182,19 +183,19 @@ void Poker::landlordProcess()
 		if (getSumL() > getSumP())
 		{
 			cout << "莊家的牌為" << getLandlord() << "  點數:" << getSumL() << endl;
-			cout << "莊家獲勝，你輸了" << endl;
+			cout << "莊家獲勝，你輸了" << endl << "------------------------------------------------------------------------------------" << endl;
 			shuffle();
 		}
 		else if (getSumP() == getSumL())
 		{
 			cout << "莊家的牌為" << getLandlord() << "  點數:" << getSumL() << endl;
-			cout << "雙方平手" << endl;
+			cout << "雙方平手" << endl <<  "------------------------------------------------------------------------------------" << endl;
 			shuffle();
 		}
 		else
 		{
 			cout << "莊家的牌為" << getLandlord() << "  點數:" << getSumL() << endl;
-			cout << "你贏了!!!!" << endl;
+			cout << "你贏了!!!!" << endl << "------------------------------------------------------------------------------------" << endl;
 			shuffle();
 		}
 	}
