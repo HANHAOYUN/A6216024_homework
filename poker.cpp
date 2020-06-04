@@ -38,9 +38,9 @@ Poker::Poker()
 		pName[8 + 13 * i] = "8";
 		pName[9 + 13 * i] = "9";
 		pName[10 + 13 * i] = "10";
-		pName[11 + 13 * i] = "J";
-		pName[12 + 13 * i] = "Q";
-		pName[13 + 13 * i] = "K";
+		pName[10 + 13 * i] = "J";
+		pName[10 + 13 * i] = "Q";
+		pName[10 + 13 * i] = "K";
 	}
 
 
